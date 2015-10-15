@@ -1,0 +1,10 @@
+FROM debian:latest
+MAINTAINER Doug Birdwell
+
+RUN apt-get update && \
+    apt-get upgrade && \
+    apt-get install -y build-essential autoconf automake libtool gnulib pkg-config curl wget git net-tools vim
+
+# docker tag  [image-id] birdwell/debian:devel
+# docker push birdwell/debian
+

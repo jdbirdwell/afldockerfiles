@@ -1,0 +1,10 @@
+FROM birdwell/debian:devel
+MAINTAINER Doug Birdwell
+
+RUN apt-get update && \
+    apt-get upgrade && \
+    cd /usr/local/src && git clone https://github.com/jdbirdwell/afl && \
+    cd afl && make install
+
+# docker tag  [image-id] birdwell/debian:afl
+# docker push birdwell/debian
